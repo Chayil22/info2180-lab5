@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #3c3f93;  
+    background-color: #3c3f93;
     color: #ffffff;
     padding: 30px 20px;
     text-align: center;
@@ -28,37 +28,65 @@ main {
 }
 
 #controls {
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: auto minmax(250px, 500px);
+    row-gap: 10px;
+    column-gap: 10px;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 #controls label {
     font-weight: 600;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 #controls input {
-    flex: 1;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
     padding: 8px 10px;
     border: 1px solid #cbd5e0;
     border-radius: 4px;
     font-size: 14px;
 }
 
+#button-row {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 #controls button {
     padding: 8px 14px;
     border: none;
-    background-color: #1f6feb;
     color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
+    flex: 0 0 auto;
+    min-width: 130px;
 }
 
-#controls button:hover {
-    background-color: #1554b3;
+#lookup {
+    background-color: #28a745;
+}
+
+#lookup:hover {
+    background-color: #218838;
+}
+
+#lookup-cities {
+    background-color: #3b82f6;
+}
+
+#lookup-cities:hover {
+    background-color: #2563eb;
 }
 
 #result {
@@ -68,8 +96,9 @@ main {
 
 table {
     width: 100%;
+    max-width: 650px;
+    margin: 15px auto 0;
     border-collapse: collapse;
-    margin-top: 10px;
     background: #ffffff;
     border-radius: 6px;
     overflow: hidden;
